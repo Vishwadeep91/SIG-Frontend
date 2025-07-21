@@ -1,6 +1,8 @@
 pipeline {
   agent any
-
+  environment {
+    IMAGE_NAME = "vishwadeep91/front-end-react-app:${BUILD_NUMBER}"
+  }
   stages {
     stage('Checkout') {
       steps {
@@ -25,7 +27,7 @@ pipeline {
     }
     stage('Run Container') {
       steps {
-        sh "docker run -d -p 8081:80 $IMAGE_NAME"
+        sh "docker run -d -p 8081:80 ${env.IMAGE_NAME}"
       }
     }
   }
