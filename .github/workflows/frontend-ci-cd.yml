@@ -6,10 +6,10 @@ on:
 
 jobs:
   build-push-run:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     env:
-      IMAGE_NAME: vishwadeep91/front-end-react-app:${{ github.run_number }}
+      IMAGE_NAME: vishwadeep91/front-end-react-app-from-actions:${{ github.run_number }}
 
     steps:
     - name: Checkout Repository
