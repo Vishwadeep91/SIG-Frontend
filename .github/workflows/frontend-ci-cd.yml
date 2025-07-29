@@ -28,8 +28,9 @@ jobs:
       run: |
         docker build -t $IMAGE_NAME .
 
-     - name: Push Docker Image to DockerHub
-        run: docker push $IMAGE_NAME
+    - name: Push Docker Image to DockerHub
+      run: |
+        docker push $IMAGE_NAME
 
     - name: Run Docker Container
       run: |
