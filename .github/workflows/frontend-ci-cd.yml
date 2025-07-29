@@ -28,6 +28,6 @@ jobs:
       run: |
         docker build -t $IMAGE_NAME .
 
-    - name: Push Docker Image to DockerHub
+    - name: Run Docker Container
       run: |
-        docker
+        docker run -d -p 8081:80 $IMAGE_NAME
